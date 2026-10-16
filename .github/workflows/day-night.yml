@@ -1,0 +1,29 @@
+name: Day / night
+
+on:
+  schedule:
+    - cron: '0 6,18 * * *'   # 06:00 and 18:00 UTC
+  push:
+    branches: [main]
+    paths: ['assets/hero-day.svg', 'assets/hero-night.svg']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Pick the scene for the current UTC hour
+        id: pick
+        run: echo "scene=$(bash .github/day-night.sh)" >> "$GITHUB_OUTPUT"
+      - name: Commit if it changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/hero.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Farm: switch to ${{ steps.pick.outputs.scene }}"
+          git push
