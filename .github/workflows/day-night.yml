@@ -2,7 +2,9 @@ name: Farm clock
 
 on:
   schedule:
-    - cron: '0 0,6,18 * * *'   # new day, sunrise and sunset (UTC)
+    # Hourly, at an off-peak minute: top-of-the-hour jobs get queued for hours. The scripts
+    # work out day/night and the date from the clock, and we only commit when something changed.
+    - cron: '23 * * * *'
   push:
     branches: [main]
     paths: ['assets/*-day.svg', 'assets/*-night.svg', '.github/hud/**', '.github/day-night.sh']
