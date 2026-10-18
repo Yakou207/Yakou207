@@ -16,7 +16,7 @@
 
 <br><br>
 
-<img src="assets/ai-hotbar.svg" alt="AI Is All You Need. Claude, ChatGPT, DeepSeek" width="832">
+<img src="assets/ai-hotbar.svg" alt="AI Is All You Need. Claude, ChatGPT, DeepSeek, Grok, Gemini" width="832">
 
 <img src="assets/cat.svg" alt="A cat napping on a cushion" width="832">
 
