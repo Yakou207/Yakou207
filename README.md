@@ -12,7 +12,7 @@
 
 <br><br>
 
-<img src="assets/backpack.svg" alt="Backpack: Python, JavaScript, React, Next.js, Node.js, FastAPI, Flask, PostgreSQL, SQLite, PyTorch, Docker, Git, GitHub" width="832">
+<img src="assets/backpack.svg" alt="Backpack: Python, R, JavaScript, React, Next.js, Node.js, FastAPI, Flask, PostgreSQL, SQLite, PyTorch, Docker, Git, GitHub" width="832">
 
 <br><br>
 
